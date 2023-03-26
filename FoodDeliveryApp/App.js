@@ -42,6 +42,12 @@ export default function App() {
           component={ViewFoodsCustomer}
           options={{ title: 'Add Item' }}
         />
+
+        <Stack.Screen
+          name="AddCustomerDetails"
+          component={AddCustomerDetails}
+          options={{ title: 'Add Delivery Details' }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
