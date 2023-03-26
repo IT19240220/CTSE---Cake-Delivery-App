@@ -88,7 +88,7 @@ export default function ViewFoodsCustomer({ navigation }) {
                 <View id={item.id} style={styles.itemContainer}>
                   <Image
                     source={{
-                      uri: 'https://www.bootdey.com/image/280x280/00BFFF/000000',
+                      uri: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80',
                     }}
                     style={styles.itemImage}
                   />
@@ -160,6 +160,7 @@ export default function ViewFoodsCustomer({ navigation }) {
                         <Text
                           style={{
                             color: 'white',
+                            backgroundColor: '',
                           }}
                         >
                           ADD ITEM
