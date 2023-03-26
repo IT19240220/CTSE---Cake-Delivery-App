@@ -13,6 +13,7 @@ import { collection, onSnapshot, query } from 'firebase/firestore';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
 
+//View foods function
 export default function ViewFoodsCustomer({ navigation }) {
   const [foods, setFoods] = useState([]);
 
@@ -20,6 +21,7 @@ export default function ViewFoodsCustomer({ navigation }) {
     setFoodsItems();
   }, []);
 
+  // View foods function
   function setFoodsItems() {
     onSnapshot(query(collection(db, 'foods')), (querySnapshot) => {
       let item = [];
@@ -36,6 +38,7 @@ export default function ViewFoodsCustomer({ navigation }) {
     });
   }
 
+  // Search Key
   const filterData = (foods, searchKey) => {
     const result = foods.filter((food) =>
       food.name.toLowerCase().includes(searchKey)
@@ -43,6 +46,7 @@ export default function ViewFoodsCustomer({ navigation }) {
     setFoods(result);
   };
 
+  // Search Function
   const onSearch = async (e) => {
     onSnapshot(query(collection(db, 'foods')), (querySnapshot) => {
       let item = [];
@@ -59,6 +63,7 @@ export default function ViewFoodsCustomer({ navigation }) {
     });
   };
 
+  //Main function
   return (
     <View style={styles.container}>
       <View
@@ -69,6 +74,7 @@ export default function ViewFoodsCustomer({ navigation }) {
           paddingRight: '2.5%',
         }}
       >
+        {/* Search Field */}
         <View style={{ flexDirection: 'row', padding: '3%' }}>
           <View style={styles.searchContainer}>
             <Icon name="search" size={25} style={{ marginLeft: 20 }} />
@@ -80,6 +86,8 @@ export default function ViewFoodsCustomer({ navigation }) {
           </View>
         </View>
       </View>
+
+      {/* View items */}
       <ScrollView style={{ marginTop: 50, height: '100%' }}>
         {foods &&
           foods.map((item, key) => {
@@ -139,6 +147,7 @@ export default function ViewFoodsCustomer({ navigation }) {
                         marginBottom: '-25%',
                       }}
                     >
+                      {/* Add Items button */}
                       <TouchableOpacity
                         style={{
                           backgroundColor: 'blue',
@@ -177,6 +186,7 @@ export default function ViewFoodsCustomer({ navigation }) {
   );
 }
 
+// Styles
 const styles = StyleSheet.create({
   container: {
     width: '100%',

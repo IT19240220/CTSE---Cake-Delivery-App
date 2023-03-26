@@ -20,7 +20,8 @@ export default function AddCustomerDetails({ route, navigation }) {
   const [error, setError] = useState('');
 
   const { items } = route.params;
-  //Place Order
+
+  //Order place functions
   function placeOrder() {
     if (deliveryName == '' || location == '' || note == '' || phoneNo == '') {
       setError('Please fill all fields !!! ');
@@ -38,11 +39,14 @@ export default function AddCustomerDetails({ route, navigation }) {
     }
   }
 
+  //Using props
   const phoneInput = useRef();
 
+  //Main view
   return (
     <View style={styles.container}>
       <ScrollView>
+        {/* Name field */}
         <Text style={{ marginTop: 100, marginBottom: 20, fontSize: 20 }}>
           Name
         </Text>
@@ -54,6 +58,7 @@ export default function AddCustomerDetails({ route, navigation }) {
           backgroundColor={'white'}
         />
 
+        {/* Delivery Address Field */}
         <Text style={{ marginTop: 10, marginBottom: 20, fontSize: 20 }}>
           Delivery Address
         </Text>
@@ -64,6 +69,8 @@ export default function AddCustomerDetails({ route, navigation }) {
           placeholder={'Enter your address'}
           backgroundColor={'white'}
         />
+
+        {/* Delivery Note Field */}
         <Text style={{ marginTop: 10, marginBottom: 20, fontSize: 20 }}>
           Delivery note
         </Text>
@@ -75,6 +82,7 @@ export default function AddCustomerDetails({ route, navigation }) {
           backgroundColor={'white'}
         />
 
+        {/* Phone number field */}
         <Text style={{ marginTop: 10, marginBottom: 20, fontSize: 20 }}>
           Phone Number
         </Text>
@@ -90,6 +98,7 @@ export default function AddCustomerDetails({ route, navigation }) {
           withShadow
         />
 
+        {/* Error Validation */}
         {error ? (
           <View
             style={{
@@ -117,6 +126,7 @@ export default function AddCustomerDetails({ route, navigation }) {
           ''
         )}
 
+        {/* Place Order Button */}
         <View style={{ margin: 40 }}>
           <TouchableHighlight
             style={{
@@ -137,21 +147,12 @@ export default function AddCustomerDetails({ route, navigation }) {
             />
           </TouchableHighlight>
         </View>
-
-        <View style={{ marginTop: 40, marginLeft: '60%', borderRadius: 20 }}>
-          <Button
-            color="#A2B223"
-            title="Log Out"
-            onPress={() => {
-              navigation.navigate('Login');
-            }}
-          />
-        </View>
       </ScrollView>
     </View>
   );
 }
 
+// Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
