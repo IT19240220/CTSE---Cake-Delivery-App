@@ -3,8 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './app/Login';
-import ViewFoods from './app/seller/ViewFoods';
-import UpdateFood from './app/seller/UpdateFood';
+import ViewCakes from './app/seller/ViewCakes';
 import AddCake from './app/seller/AddCake';
 import SignUp from './app/SignUp';
 
@@ -16,6 +15,7 @@ import UpdateCustomerDetails from './app/buyer/UpdateCustomerDetails';
 
 import AdminTabs from './app/admin/components/AdminTabs';
 import AddCake from './app/seller/AddCake';
+import ViewCakes from './app/seller/ViewCakes';
 
 const Stack = createNativeStackNavigator();
 
@@ -70,12 +70,18 @@ export default function App() {
           }}
         />
 
+        {/* seller */}
         <Stack.Screen
           name="AddCake"
           component={AddCake}
           options={{ title: "Add Cake" }}
         />
 
+        <Stack.Screen
+          name="ViewCakes"
+          component={ViewCakes}
+          options={{ title: "View Cakes" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
