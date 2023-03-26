@@ -22,6 +22,7 @@ import {
 export default function ViewCustomerOrder({ navigation }) {
   const [foods, setFoods] = useState([]);
 
+//   View Orders Function
   function setFoodsItems() {
     onSnapshot(query(collection(db, 'OrderDetails')), (querySnapshot) => {
       let tempFoods = [];
@@ -41,6 +42,7 @@ export default function ViewCustomerOrder({ navigation }) {
     });
   }
 
+  //Delete function 
   function deleteFood(id) {
     deleteDoc(doc(db, 'OrderDetails', id)).then(() => {});
   }
@@ -49,9 +51,11 @@ export default function ViewCustomerOrder({ navigation }) {
     setFoodsItems();
   }, []);
 
+  //Main view
   return (
     <View style={styles.container}>
       <ScrollView>
+        {/* Get all orders using map function */}
         {foods &&
           foods.map((item, key) => {
             return (
@@ -75,6 +79,7 @@ export default function ViewCustomerOrder({ navigation }) {
                     alignItems: 'flex-start',
                   }}
                 >
+                  {/* Details Card */}
                   <View
                     style={{
                       width: '50%',
@@ -105,7 +110,9 @@ export default function ViewCustomerOrder({ navigation }) {
                     </Text>
                   </View>
                 </View>
+
                 <View style={{ flex: 0.3, flexDirection: 'row' }}>
+                  {/* Confirmation box */}
                   <TouchableOpacity
                     style={{ marginTop: 70, marginLeft: 15 }}
                     onPress={() => {
@@ -125,6 +132,7 @@ export default function ViewCustomerOrder({ navigation }) {
                       );
                     }}
                   >
+                    {/* Trash Icon */}
                     <FontAwesomeIcon
                       icon={faTrash}
                       color={'red'}
@@ -132,6 +140,8 @@ export default function ViewCustomerOrder({ navigation }) {
                       size={30}
                     />
                   </TouchableOpacity>
+
+                  {/* Update customer Button */}
                   <TouchableOpacity
                     style={{ marginTop: 70, marginLeft: 50 }}
                     onPress={() =>
@@ -146,6 +156,7 @@ export default function ViewCustomerOrder({ navigation }) {
                       })
                     }
                   >
+                    {/* Update icon */}
                     <FontAwesomeIcon
                       icon={faPen}
                       color={'green'}
@@ -158,6 +169,7 @@ export default function ViewCustomerOrder({ navigation }) {
             );
           })}
 
+        {/* Logout Button */}
         <View
           style={{
             marginBottom: 10,
@@ -180,6 +192,7 @@ export default function ViewCustomerOrder({ navigation }) {
   );
 }
 
+// Styles
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,

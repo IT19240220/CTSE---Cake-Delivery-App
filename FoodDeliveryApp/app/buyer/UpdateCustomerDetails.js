@@ -35,7 +35,7 @@ export default function UpdateCustomerDetails({ route, navigation }) {
     setPhoneNo(customerPhoneNo);
   }, []);
 
-  //Place Order
+  //Update Delivery Details 
   function updateDetails() {
     updateDoc(doc(db, 'OrderDetails', customerID), {
       name: deliveryName,
@@ -47,9 +47,12 @@ export default function UpdateCustomerDetails({ route, navigation }) {
     });
   }
 
+  //Main View
   return (
     <View style={styles.container}>
       <ScrollView>
+
+        {/* Name Field */}
         <Text style={{ marginTop: 100, marginBottom: 20, fontSize: 20 }}>
           Name
         </Text>
@@ -61,6 +64,7 @@ export default function UpdateCustomerDetails({ route, navigation }) {
           backgroundColor={'white'}
         />
 
+        {/* Delivery Address Field */}
         <Text style={{ marginTop: 10, marginBottom: 20, fontSize: 20 }}>
           Delivery Address
         </Text>
@@ -72,6 +76,7 @@ export default function UpdateCustomerDetails({ route, navigation }) {
           backgroundColor={'white'}
         />
 
+        {/* Delivery note field */}
         <Text style={{ marginTop: 10, marginBottom: 20, fontSize: 20 }}>
           Delivery Note
         </Text>
@@ -83,6 +88,7 @@ export default function UpdateCustomerDetails({ route, navigation }) {
           backgroundColor={'white'}
         />
 
+        {/* Phone Number Field */}
         <Text style={{ marginTop: 10, marginBottom: 20, fontSize: 20 }}>
           Phone Number
         </Text>
@@ -98,6 +104,8 @@ export default function UpdateCustomerDetails({ route, navigation }) {
           withShadow
           autoFocus
         />
+
+        {/* Update Button */}
         <View style={{ margin: 40 }}>
           <TouchableHighlight
             style={{
@@ -123,6 +131,7 @@ export default function UpdateCustomerDetails({ route, navigation }) {
   );
 }
 
+// Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
