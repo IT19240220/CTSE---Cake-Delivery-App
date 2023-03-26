@@ -59,6 +59,16 @@ export default function App() {
           component={UpdateCustomerDetails}
           options={{ title: 'Update Details' }}
         />
+
+        {/* advertisement */}
+         <Stack.Screen
+          name="AdminTabs"
+          component={AdminTabs}
+          options={{
+            headerShown: false,
+          }}
+          />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
