@@ -12,7 +12,6 @@ import SignUp from './app/SignUp';
 import ViewFoodsCustomer from './app/buyer/ViewFoodsCustomer';
 import AddCustomerDetails from './app/buyer/AddCustomerDetails';
 import ViewCustomerOrder from './app/buyer/ViewCustomerOrder';
-import ViewCustomerDetails from './app/buyer/ViewCustomerDetails';
 import UpdateCustomerDetails from './app/buyer/UpdateCustomerDetails';
 
 import AdminTabs from './app/admin/components/AdminTabs';
@@ -53,6 +52,12 @@ export default function App() {
           name="ViewCustomerOrder"
           component={ViewCustomerOrder}
           options={{ title: 'My Orders' }}
+        />
+
+        <Stack.Screen
+          name="UpdateCustomerDetails"
+          component={UpdateCustomerDetails}
+          options={{ title: 'Update Details' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
