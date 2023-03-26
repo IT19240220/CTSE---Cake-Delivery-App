@@ -38,7 +38,6 @@ export default function AddCustomerDetails({ route, navigation }) {
     }
   }
 
-  const [valid, setValid] = useState(false);
   const phoneInput = useRef();
 
   return (
