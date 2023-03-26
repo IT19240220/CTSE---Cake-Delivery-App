@@ -21,7 +21,6 @@ import {
 
 export default function ViewCustomerOrder({ navigation }) {
   const [foods, setFoods] = useState([]);
-  const [isChecked, setChecked] = useState(false);
 
   function setFoodsItems() {
     onSnapshot(query(collection(db, 'OrderDetails')), (querySnapshot) => {

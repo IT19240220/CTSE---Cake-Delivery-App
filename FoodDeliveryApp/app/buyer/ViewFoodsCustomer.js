@@ -1,12 +1,10 @@
 import {
-  Button,
   ScrollView,
   StyleSheet,
   Text,
   View,
   Image,
   TouchableOpacity,
-  TouchableHighlight,
   TextInput,
 } from 'react-native';
 import { useEffect, useState } from 'react';
@@ -17,13 +15,6 @@ import { responsiveHeight } from 'react-native-responsive-dimensions';
 
 export default function ViewFoodsCustomer({ navigation }) {
   const [foods, setFoods] = useState([]);
-
-  const generateColor = () => {
-    const randomColor = Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, '0');
-    return `#${randomColor}`;
-  };
 
   useEffect(() => {
     setFoodsItems();

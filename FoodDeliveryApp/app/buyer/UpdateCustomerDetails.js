@@ -17,10 +17,6 @@ export default function UpdateCustomerDetails({ route, navigation }) {
   const [location, setLocation] = useState('');
   const [note, setNote] = useState('');
   const [phoneNo, setPhoneNo] = useState('');
-  const [state, setState] = useState('');
-  const [state1, setState1] = useState('');
-  const [state2, setState2] = useState('');
-  const [state3, setState3] = useState('');
 
   const {
     customerID,
@@ -31,7 +27,6 @@ export default function UpdateCustomerDetails({ route, navigation }) {
   } = route.params;
 
   const phoneInput = useRef();
-  const [valid, setValid] = useState(false);
 
   useEffect(() => {
     setDeliveryName(customerName);
@@ -131,7 +126,6 @@ export default function UpdateCustomerDetails({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
   },
