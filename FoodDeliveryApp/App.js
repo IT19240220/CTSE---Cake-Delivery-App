@@ -16,6 +16,7 @@ import UpdateCustomerDetails from './app/buyer/UpdateCustomerDetails';
 import AdminTabs from './app/admin/components/AdminTabs';
 import AddCake from './app/seller/AddCake';
 import ViewCakes from './app/seller/ViewCakes';
+import UpdateCakes from './app/seller/UpdateCakes';
 
 const Stack = createNativeStackNavigator();
 
@@ -82,6 +83,13 @@ export default function App() {
           component={ViewCakes}
           options={{ title: "View Cakes" }}
         />
+
+        <Stack.Screen
+          name="UpdateCakes"
+          component={UpdateCakes}
+          options={{ title: "Update Cakes" }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
