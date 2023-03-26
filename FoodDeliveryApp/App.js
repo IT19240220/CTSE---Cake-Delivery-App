@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './app/Login';
 import ViewFoods from './app/seller/ViewFoods';
 import UpdateFood from './app/seller/UpdateFood';
-import AddFood from './app/seller/AddFood';
+import AddCake from './app/seller/AddCake';
 import SignUp from './app/SignUp';
 
 //Buyer
@@ -15,6 +15,7 @@ import ViewCustomerOrder from './app/buyer/ViewCustomerOrder';
 import UpdateCustomerDetails from './app/buyer/UpdateCustomerDetails';
 
 import AdminTabs from './app/admin/components/AdminTabs';
+import AddCake from './app/seller/AddCake';
 
 const Stack = createNativeStackNavigator();
 
@@ -61,14 +62,20 @@ export default function App() {
         />
 
         {/* advertisement */}
-         <Stack.Screen
+        <Stack.Screen
           name="AdminTabs"
           component={AdminTabs}
           options={{
             headerShown: false,
           }}
-          />
-        
+        />
+
+        <Stack.Screen
+          name="AddCake"
+          component={AddCake}
+          options={{ title: "Add Cake" }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
