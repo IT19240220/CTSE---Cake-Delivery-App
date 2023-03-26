@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     marginTop: "20%",
   },
   video: {
-    flex: 1,
+    flex: 2,
     alignSelf: "stretch",
     borderRadius: 10,
   },
